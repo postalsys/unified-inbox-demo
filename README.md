@@ -1,6 +1,10 @@
 # EmailEngine Unified Inbox Demo
 
-This demo app uses EmailEngine as the backend to show a unified mailbox that includes emails from multiple different email accounts.
+This demo app uses EmailEngine as the backend to show a unified mailbox that includes emails from multiple email accounts.
+
+Unified inbox requires the [Document Store](https://emailengine.app/document-store) feature to be enabled in EmailEngine settings, as all queries would go against cached emails in ElasticSearch, not IMAP.
+
+For faster results, set `notifyWebSafeHtml` setting option for EmailEngine to `true` (Configuration → Webhooks → Text content). This way EmailEngine would cache pre-processed HTML in ElasticSearch, and it would not need to run any IMAP requests even if the email contains embedded image attachments, etc.
 
 ![](https://cldup.com/RJlDzEyc1j.png)
 
@@ -55,9 +59,9 @@ Params used in the request:
 Query arguments used in the request
 
 -   **documentStore** – set to `"true"` to retrieve message info from ElasticSearch instead of IMAP
--   **webSafeHtml** – set to `"true"` to make sure the output includes the `text.html` property that can be injected straight to the web page. If not set, then the result might only include plaintext content, or the html content might include tags that break the structure of the resulting HTML page.
--   **textType** – set to `"*"` to make sure that all text content (both the HTML, or if it is missing, then plaintext) is retrieved from the backend
--   **markAsSeen** – set to `"true"` to make sure that if the email was unseen, then it gets marked as seen as we disaply it in the browser
+-   **webSafeHtml** – set to `"true"` to make sure the output includes the `text.html` property that can be injected straight to the web page. If not set, then the result might only include plaintext content or the HTML content might include tags that break the structure of the resulting HTML page.
+-   **textType** – set to `"*"` to make sure that all text content (both the HTML or if it is missing, then plaintext) is retrieved from the backend
+-   **markAsSeen** – set to `"true"` to make sure that if the email was unseen, then it gets marked as seen as we display it in the browser
 
 ## License
 
