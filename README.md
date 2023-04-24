@@ -43,6 +43,10 @@ Open the app in the browser: [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 ### Unified search `/v1/unified/search`
 
+The unified search API endpoint works similarly to [regular search](https://api.emailengine.app/#operation/postV1AccountAccountSearch) but allows merging results from multiple accounts. This endpoint always uses ElasticSearch as the backend, so if you do not have the Document Store feature enabled, you can't use this endpoint.
+
+While regular search and mailbox listing endpoints use the UID value for sorting (higher first), unified search uses message date (newer first).
+
 See the API docs for Unified search [here](https://api.emailengine.app/#operation/postV1UnifiedSearch).
 
 Query arguments used in the request
