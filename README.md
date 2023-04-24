@@ -45,7 +45,15 @@ Open the app in the browser: [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 See the API docs for Unified search [here](https://api.emailengine.app/#operation/postV1UnifiedSearch).
 
-No special options are used, except the `page` query argument.
+Query arguments used in the request
+
+-   **page** – set to the active page number. Paging in EmailEngine is zero-based, so if there are ten pages total, valid page numbers are 0…9.
+
+Payload data used in the request
+
+-   **accounts** – an array of email accounts to include in the resulting listing. If this value is not set, then emails from all indexed accounts will be included.
+-   **paths** – fixed to `["INBOX]` to include emails only from the Inbox folder
+-   **search** – is set to an empty object `{}` as the search query must be set, but in this case, we want to include all emails
 
 ### Message details `/v1/account/{account}/message/{message}`
 
