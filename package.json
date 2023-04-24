@@ -1,0 +1,21 @@
+{
+    "name": "@postalsys/unified-inbox-demo",
+    "private": true,
+    "version": "1.0.0",
+    "description": "",
+    "main": ".prettierrc.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Andris Reinman",
+    "license": "MIT",
+    "dependencies": {
+        "@fastify/static": "6.10.1",
+        "@fastify/view": "7.4.1",
+        "axios": "1.3.6",
+        "fastify": "4.15.0",
+        "handlebars": "4.7.7"
+    }
+}

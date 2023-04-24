@@ -1,0 +1,53 @@
+<div class="clearfix">
+    <nav class="float-end">
+        <ul class="pagination">
+
+            {{#if prevPageUrl}}
+            <li class="page-item">
+                <a class="page-link" href="{{prevPageUrl}}">Previous</a>
+            </li>
+            {{else}}
+            <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+            </li>
+            {{/if}}
+
+            {{#if nextPageUrl}}
+            <li class="page-item">
+                <a class="page-link" href="{{nextPageUrl}}">Next</a>
+            </li>
+            {{else}}
+            <li class="page-item disabled">
+                <span class="page-link">Next</span>
+            </li>
+            {{/if}}
+
+        </ul>
+    </nav>
+</div>
+
+<div class="list-group">
+
+    {{#each messages}}
+    <a href="/account/{{account}}/message/{{id}}"
+        class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+        <div>
+
+            <div
+                style="display: inline-block; width: 0.5em; height: 0.5em; border-radius: 0.25em; {{#if unseen}}background: blue{{else}}{{/if}}; margin: auto;">
+            </div>
+
+        </div>
+
+        <div class="ms-2 me-auto">
+            <div>
+                <div class="fw-bold">
+                    {{#if from.name}}{{from.name}}{{else}}&lt;{{from.address}}&gt;{{/if}}
+                </div>
+                <div>{{subject}}</div>
+            </div>
+        </div>
+    </a>
+    {{/each}}
+
+</div>
