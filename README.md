@@ -2,6 +2,10 @@
 
 This demo app uses EmailEngine as the backend to show a unified mailbox that includes emails from multiple different email accounts.
 
+![](https://cldup.com/RJlDzEyc1j.png)
+
+> Listing emails from multiple accounts. Opening an unread email marks that email as seen in the original mailbox.
+
 ### Step 1. Install dependencies
 
 ```
